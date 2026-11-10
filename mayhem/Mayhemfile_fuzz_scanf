@@ -1,0 +1,8 @@
+project: savantenvs/nuttx
+target: fuzz_scanf
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_scanf/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_scanf
+    libfuzzer: true

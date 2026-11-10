@@ -1,0 +1,47 @@
+/* Hand-written stand-in for the Kconfig-generated nuttx/config.h: a
+ * sim-like host configuration that enables the portable libc pieces the
+ * Mayhem harnesses fuzz (printf/scanf, regex, strptime/strftime, fnmatch,
+ * lzf, inet_pton/base64). Nothing here touches upstream files.
+ */
+
+#ifndef __MAYHEM_NX_SHIM_CONFIG_H
+#define __MAYHEM_NX_SHIM_CONFIG_H
+
+#define CONFIG_ARCH_SIM 1
+#define CONFIG_HOST_X86_64 1
+#define CONFIG_NFILE_DESCRIPTORS_PER_BLOCK 8
+#define CONFIG_STREAM_HEXDUMP_BUFFER_SIZE 64
+#define CONFIG_STREAM_BASE64_BUFFER_SIZE 64
+
+#define CONFIG_HAVE_DOUBLE 1
+#define CONFIG_HAVE_LONG_DOUBLE 1
+#define CONFIG_LIBC_FLOATINGPOINT 1
+#define CONFIG_LIBC_LONG_LONG 1
+#define CONFIG_LIBC_SCANSET 1
+#define CONFIG_LIBC_NUMBERED_ARGS 1
+#define CONFIG_LIBC_PRINTF_C23 1
+#define CONFIG_LIBC_PRINTF_LEFT_JUSTIFY 1
+#define CONFIG_LIBC_PRINTF_LONG_LONG 1
+#define CONFIG_LIBC_PRINTF_PERCENT_N 1
+#define CONFIG_LIBC_PRINTF_EXACT_LDOUBLE 1
+#define CONFIG_LIBC_PRINTF_ALT_FORM 1
+#define CONFIG_LIBC_PRINTF_OCTAL 1
+#define CONFIG_LIBC_PRINTF_INT_PRECISION 1
+#define CONFIG_LIBC_PRINTF_SHORT 1
+#define CONFIG_LIBC_PRINTF_EXACT 1
+#define CONFIG_LIBC_PRINTF_HEXFLOAT 1
+
+#define CONFIG_LIBC_LZF 1
+#define CONFIG_LIBC_LZF_HLOG 13
+#define CONFIG_LIBC_LZF_ALIGN 1
+#define CONFIG_STREAM_LZF_BLOG 10
+#define CONFIG_LIBC_STRFTIME_C_STANDARD_FORMATS 1
+#define CONFIG_LIBC_STRFTIME_POSIX_FORMATS 1
+#define CONFIG_LIBC_STRFTIME_NONSTANDARD_FORMATS 1
+
+#define CONFIG_NET_IPv4 1
+#define CONFIG_NET_IPv6 1
+#define CONFIG_LIBC_IPv4_ADDRCONV 1
+#define CONFIG_LIBC_IPv6_ADDRCONV 1
+
+#endif /* __MAYHEM_NX_SHIM_CONFIG_H */

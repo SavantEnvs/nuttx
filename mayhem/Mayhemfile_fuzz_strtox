@@ -1,0 +1,8 @@
+project: savantenvs/nuttx
+target: fuzz_strtox
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_strtox/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_strtox
+    libfuzzer: true
